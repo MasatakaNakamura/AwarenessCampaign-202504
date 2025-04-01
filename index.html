@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フォロワーシップ入門セミナー | 指示待ち卒業！明日から仕事がもっと面白くなる</title>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #0f9d58;
+            --accent-color: #f4b400;
+            --dark-color: #333333;
+            --light-color: #f5f5f5;
+            --white-color: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--white-color);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, var(--primary-color), #5e97f6);
+            color: var(--white-color);
+            border-radius: 8px 8px 0 0;
+            margin: -20px -20px 20px -20px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        h2 {
+            font-size: 22px;
+            margin: 30px 0 15px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 18px;
+            margin: 25px 0 10px;
+            color: var(--secondary-color);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            background-color: #fff4d6;
+            padding: 2px 4px;
+            font-weight: bold;
+        }
+        
+        .emoji {
+            font-size: 24px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        
+        .benefits {
+            background-color: #e8f4fc;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .benefits h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .checklist {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .checklist li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .checklist li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .schedule {
+            background-color: #f0f8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .schedule h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+        
+        .schedule-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .schedule-time {
+            width: 100px;
+            font-weight: bold;
+        }
+        
+        .cta-button {
+            display: block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            text-align: center;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 30px auto;
+            max-width: 400px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            background-color: #e0a800;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+            transform: translateY(-2px);
+        }
+        
+        .instructor {
+            display: flex;
+            align-items: center;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .instructor-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 36px;
+            color: #888;
+        }
+        
+        .instructor-info {
+            flex: 1;
+        }
+        
+        .instructor-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 14px;
+            color: #777;
+        }
+        
+        .problem-statement {
+            font-style: italic;
+            text-align: center;
+            margin: 20px 0;
+            color: #555;
+        }
+        
+        .note {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 20px 0;
+                margin: -15px -15px 15px -15px;
+            }
+            
+            .instructor {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .instructor-image {
+                margin: 0 auto 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>【若手・中堅社員向け】指示待ち卒業！🚀<br>明日から仕事がもっと面白くなる<br>「フォロワーシップ」入門セミナー</h1>
+        </header>
+        
+        <div class="problem-statement">
+            <p><strong>「もっと主体的に動けるようになりたい…」</strong><br>
+            <strong>「チームの成果にもっと貢献したい…」</strong><br>
+            <strong>「自分の成長スピードを加速させたい…」</strong></p>
+        </div>
+        
+        <p>そんな想いを抱えている若手・中堅社員の皆さんへ！</p>
+        
+        <p><strong>「フォロワーシップ」</strong>という言葉を聞いたことがありますか？ リーダーを支えるだけでなく、自ら考えて行動し、チーム全体の成果を最大化していく力のことです。</p>
+        
+        <p>今回のセミナーでは、この「フォロワーシップ」を分かりやすく解説！ 明日からすぐに実践できるヒントを通じて、あなたの<span class="highlight">「主体性」</span>を引き出し、<span class="highlight">「成長」</span>を加速させるきっかけを提供します。</p>
+        
+        <p><strong>「どうすればもっと能動的に案件を進められるんだろう？」</strong><br>その答えが、この1時間で見つかるかもしれません！</p>
+        
+        <div class="benefits">
+            <h3><span class="emoji">🤔</span> このセミナーは、こんなあなたにおすすめ！</h3>
+            <ul class="checklist">
+                <li>もっと<strong>主体性</strong>を持って仕事に取り組みたい！</li>
+                <li>指示待ちではなく、自分で考えて動けるようになりたい！</li>
+                <li>チームへの貢献度を高めて、もっと成果を出したい！</li>
+                <li>リーダーやメンバーと、より良い関係を築きたい！</li>
+                <li>自分の<strong>成長</strong>につながる新しい視点やスキルを学びたい！</li>
+            </ul>
+        </div>
+        
+        <div class="benefits">
+            <h3><span class="emoji">✨</span> このセミナーで得られること</h3>
+            <ul class="checklist">
+                <li><strong>フォロワーシップとは何か？</strong> が基礎から分かる！</li>
+                <li><strong>主体性</strong>を発揮するための具体的な考え方や行動が学べる！</li>
+                <li>チームに貢献し、<strong>仕事の成果を出しやすく</strong>なるヒントが得られる！</li>
+                <li><strong>能動的に動ける人材</strong>になるための第一歩が踏み出せる！</li>
+            </ul>
+        </div>
+        
+        <div class="schedule">
+            <h3><span class="emoji">📅</span> 開催概要</h3>
+            <p><strong>日時:</strong> 2025年4月xx日 (曜日) 19:00 - 20:00</p>
+            <p><strong>形式:</strong> Google Meet (オンライン開催)
+                <div class="note">時間になったら、以下のリンクからお気軽にご参加ください！</div>
+            </p>
+            <p><strong>対象:</strong> 若手社員、中堅社員の皆さん
+                <div class="note">(もちろん、上記以外の方のご参加も大歓迎です！)</div>
+            </p>
+            <p><strong>講師:</strong> 第一システム事業部 リーダー 手塚 匠哉</p>
+            <p><strong>お申し込み:</strong> <span class="highlight">不要</span>です！当日、時間になったらGoogle Meetにご参加ください。</p>
+        </div>
+        
+        <h3><span class="emoji">🎤</span> 当日の内容（予定）</h3>
+        <div class="schedule-item">
+            <div class="schedule-time">5分</div>
+            <div>オープニング</div>
+        </div>
+        <div class="schedule-item">
+            <div class="schedule-time">15分</div>
+            <div><strong>フォロワーシップって何？</strong></div>
+        </div>
+        <div class="schedule-item">
+            <div class="schedule-time">20分</div>
+            <div><strong>フォロワーシップの基本と実践</strong></div>
+        </div>
+        <div class="schedule-item">
+            <div class="schedule-time">10分</div>
+            <div><strong>自分のフォロワーシップの状況確認</strong></div>
+        </div>
+        <div class="schedule-item">
+            <div class="schedule-time">10分</div>
+            <div><strong>フォロワーシップを発揮する３ステップ</strong></div>
+        </div>
+        <p class="note">※内容は変更になる可能性があります。</p>
+        
+        <div class="instructor">
+            <div class="instructor-image">👨‍🏫</div>
+            <div class="instructor-info">
+                <div class="instructor-name">第一システム事業部 リーダー 手塚 匠哉</div>
+            </div>
+        </div>
+        
+        <p><strong>主催:</strong> 第一システム事業部</p>
+        
+        <a href="https://meet.google.com/xxx-xxxx-xxx" class="cta-button" target="_blank">
+            <span class="emoji">👇</span> Google Meetに参加する
+        </a>
+        
+        <p style="text-align: center;"><strong>途中参加・途中退出もOK！</strong> ちょっと気になるな、という方も、ぜひお気軽にご参加ください！</p>
+        
+        <p style="text-align: center; font-weight: bold; margin-top: 30px; font-size: 18px;">あなたの「主体性」と「成長」のきっかけを、一緒に見つけましょう！</p>
+        
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>
